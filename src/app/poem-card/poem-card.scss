@@ -1,0 +1,78 @@
+.poem-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px; /* rounded-xl */
+  box-shadow: var(--shadow);
+  padding: 1.5rem; /* p-6 */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative; /* enable absolute children like action buttons */
+}
+
+.card-actions {
+  position: absolute;
+  right: 24px; /* px-6 */
+  top: 24px;
+  display: flex;
+  gap: 8px; /* small gap between icons */
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.poem-title {
+  font-family: var(--font-family-heading);
+  font-weight: 500;
+  color: var(--text-card-foreground);
+  margin: 0 0 0.25rem 0;
+  /* ensure the title doesn't overlap action icons */
+  padding-right: 88px; /* reserve space for two 36px buttons + gap and breathing room */
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.poem-author {
+  margin: 0 0 0.5rem 0;
+}
+
+.poem-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.poem-lines {
+  font-family: var(--font-family-body);
+  color: rgba(26,26,26,0.9); /* text-card-foreground/90 */
+  line-height: 1.8;
+  margin: 0 0 0.75rem 0;
+  /* visually clamp to ~12 lines without introducing a scroll inside the card */
+  display: -webkit-box;
+  -webkit-line-clamp: 12;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--primary-color);
+}
+.action-btn svg { display: block; }
+
+.read-more-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted-foreground);
+  font-style: italic;
+  padding: 0;
+  cursor: pointer;
+}

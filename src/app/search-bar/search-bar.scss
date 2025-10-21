@@ -1,0 +1,137 @@
+.search-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.search-toggles {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* 32px between radio buttons */
+  margin-bottom: 1.5rem;
+}
+
+.toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* small gap between bubble and text (8px via toggle-text margin) */
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px; /* text-base */
+  color: #1A1A1A; /* almost black for label text in light mode */
+  font-weight: 500;
+  user-select: none;
+}
+
+.toggle-label input[type="radio"] {
+  /* keep native input for keyboard/assistive tech but visually hide it */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-bubble {
+  width: 16px; /* size-4 */
+  height: 16px;
+  border-radius: 50%; /* rounded-full */
+  border: 1px solid rgba(35, 57, 91, 0.2); /* semi-transparent navy */
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff; /* light mode: white/transparent background */
+  position: relative;
+  flex: 0 0 auto;
+  transition: box-shadow 150ms ease, border-color 150ms ease, background 150ms ease;
+  /* very subtle drop shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Inner indicator dot (hidden when unchecked) */
+.radio-bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px; /* size-2 */
+  height: 8px;
+  border-radius: 50%;
+  background: #23395B; /* primary navy for checked state */
+  opacity: 0;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+/* checked state: show inner dot */
+.toggle-label input[type="radio"]:checked + .radio-bubble::after {
+  opacity: 1;
+}
+
+/* focus-visible ring */
+.toggle-label input[type="radio"]:focus-visible + .radio-bubble {
+  box-shadow: 0 0 0 3px rgba(35,57,91,0.5); /* 3px ring at 50% opacity */
+  border-color: #23395B; /* solid navy on focus */
+}
+
+.toggle-text {
+  margin-left: 8px; /* space-x-2 */
+  color: inherit;
+}
+
+/* disabled state */
+.toggle-label input[type="radio"]:disabled + .radio-bubble,
+.toggle-label input[type="radio"]:disabled + .radio-bubble + .toggle-text {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.search-input-group {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #23395B;
+  border-radius: 25px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  background: #F9F7F1;
+  color: #23395B;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #666;
+}
+
+.search-input:focus {
+  border-color: #3A5F8A;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  background: #23395B;
+  color: #F9F7F1;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  background: #3A5F8A;
+}
+
+.search-button svg {
+  stroke: currentColor;
+}

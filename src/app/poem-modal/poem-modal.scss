@@ -1,0 +1,55 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--bg-color);
+  width: calc(100vw - 32px);
+  max-width: 768px; /* max-w-3xl */
+  border-radius: 10px; /* rounded-lg */
+  padding: 1.5rem; /* p-6 */
+  max-height: 80vh; /* overall dialog */
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.modal-title {
+  margin: 0 0 0.5rem 0;
+  font-family: var(--font-family-heading);
+  color: var(--text-card-foreground);
+}
+
+.modal-author {
+  margin: 0 0 1rem 0;
+  font-family: var(--font-family-body);
+  color: var(--text-muted-foreground);
+  font-style: italic;
+}
+
+.modal-body {
+  max-height: 60vh; /* scrollable content area */
+  overflow: auto;
+}
+
+.poem-text {
+  font-family: var(--font-family-body);
+  line-height: 1.8;
+  color: var(--text-card-foreground);
+}
+
+.close-btn {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-muted-foreground);
+  cursor: pointer;
+}

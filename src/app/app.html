@@ -1,0 +1,12 @@
+<app-header></app-header>
+<app-search-bar (search)="onSearch($event)"></app-search-bar>
+<app-error-display [error]="errorMessage()"></app-error-display>
+<main class="results">
+  <ng-container *ngFor="let poem of poems()">
+    <app-poem-card [poem]="poem" (viewFull)="openModal($event)"></app-poem-card>
+  </ng-container>
+</main>
+<app-footer></app-footer>
+<app-poem-modal *ngIf="selectedPoem()" [poem]="selectedPoem()!" (close)="closeModal()"></app-poem-modal>
+
+<router-outlet />

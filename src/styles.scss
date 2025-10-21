@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --bg-color: #F9F7F1;
+  --primary-color: #23395B;
+  --secondary-color: #6B7B8C;
+  --accent-color: #A8B6C1;
+  --text-color: #23395B;
+  --text-secondary: #6B7B8C;
+  --text-card-foreground: #1A1A1A;
+  --text-muted-foreground: #6B6B6B;
+  --border-color: #E5E5E5;
+  --shadow: 0 2px 8px rgba(35, 57, 91, 0.1);
+  --font-family-heading: 'Playfair Display', serif;
+  --font-family-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-body);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-family-heading);
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-family-body);
+  cursor: pointer;
+}
+
+input, button {
+  font-size: 1rem;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem; /* 24px gap */
+  padding: 0 1.5rem; /* px-6 = 24px total padding -> 1.5rem per side */
+  margin: 0 auto;
+  max-width: 1280px; /* max-w-7xl */
+}
+
+@media (min-width: 768px) {
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--bg-color);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.close-button:hover {
+  color: var(--text-color);
+}

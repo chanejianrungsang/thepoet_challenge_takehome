@@ -1,0 +1,30 @@
+<div class="poem-card">
+  <div class="card-actions">
+    <button class="action-btn" (click)="copyPoem()" [attr.aria-label]="copied ? 'Copied' : 'Copy poem'" [title]="copied ? 'Copied' : 'Copy poem'">
+      <!-- Clipboard SVG -->
+      <svg *ngIf="!copied" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+      <!-- Check SVG when copied -->
+      <svg *ngIf="copied" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20 6L9 17l-5-5"></path>
+      </svg>
+    </button>
+    <button class="action-btn" (click)="onViewFull()" aria-label="Expand poem" title="Expand poem">
+      <!-- Expand SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M15 3h6v6"></path>
+        <path d="M21 3L10 14"></path>
+      </svg>
+    </button>
+  </div>
+  <h3 class="poem-title">{{ poem.title }}</h3>
+  <p class="poem-author">by {{ poem.author }}</p>
+  <div class="poem-body">
+    <p class="poem-lines" [innerHTML]="displayLines.join('<br>')"></p>
+    <button *ngIf="isTruncated" (click)="onViewFull()" class="read-more-btn">
+      Click to read more...
+    </button>
+  </div>
+</div>
