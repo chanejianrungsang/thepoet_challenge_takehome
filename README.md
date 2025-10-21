@@ -41,19 +41,11 @@ Navigate to `http://localhost:4200/` in your browser.
 ng build --configuration production
 ```
 
-The build artifacts will be stored in the `dist/` directory.
+The build artifacts will be stored in the `dist/the-poet-angular/browser` directory.
 
 ## API
 
-This application uses the [PoetryDB API](https://poetrydb.org/) to fetch poems. No API key is required.
-
-## Architecture
-
-- **Angular 17+** with standalone components
-- **SCSS** for styling with CSS custom properties
-- **RxJS** for reactive programming
-- **HttpClient** for API calls
-- Component-based architecture with proper separation of concerns
+This application uses the (https://poetrydb.org/) to fetch poems. 
 
 ## Components
 
@@ -64,17 +56,14 @@ This application uses the [PoetryDB API](https://poetrydb.org/) to fetch poems. 
 - `PoemModalComponent`: Full poem modal dialog
 - `FooterComponent`: Footer section
 
-## Services
-
-- `PoetryService`: Handles API calls to PoetryDB with search functionality
 
 ## Live demo
 
-- Demo: 
+- Demo: thepoet-challenge-takehome.vercel.app
 
 - Build the app locally to verify:
 
 	npm install
 	ng build --configuration production
 
-- The production build artifacts are output to `dist/the-poet-angular`. For a static site deployment on Vercel, point the project to serve the files from that directory (or use the default build step in Vercel to run `ng build` and serve `dist/the-poet-angular`).
+- The production build artifacts are output to `dist/the-poet-angular/browser`. For a static site deployment on Vercel, point the project to serve the files from that directory (or use the default build step in Vercel to run `ng build` and serve `dist/the-poet-angular`).
