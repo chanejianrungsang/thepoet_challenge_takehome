@@ -70,11 +70,7 @@ This application uses the [PoetryDB API](https://poetrydb.org/) to fetch poems. 
 
 ## Live demo
 
-If you publish a deployed site, add the demo link here. Example:
-
-- Demo: https://your-demo.vercel.app
-
-Deployment notes (static build on Vercel):
+- Demo: 
 
 - Build the app locally to verify:
 
@@ -82,7 +78,3 @@ Deployment notes (static build on Vercel):
 	ng build --configuration production
 
 - The production build artifacts are output to `dist/the-poet-angular`. For a static site deployment on Vercel, point the project to serve the files from that directory (or use the default build step in Vercel to run `ng build` and serve `dist/the-poet-angular`).
-
-Notes about SSR:
-
-- This project contains optional server-side rendering (SSR) files (`src/main.server.ts`, `src/server.ts`, etc.). If you plan to deploy a static site on Vercel (recommended for a simple demo), SSR is not required and you can deploy the static build instead. If you want true SSR on Vercel you will need to configure a serverless function and adjust the Vercel build settings — keeping the SSR files is harmless if you may want that later.
